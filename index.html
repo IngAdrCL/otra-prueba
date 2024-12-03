@@ -13,33 +13,21 @@
   <div class="franja2"></div>
 
   <section class="form-register">
-      <h4>Genera tu CURP</h4>
+      <h4>Ingrese su CURP</h4>
       
       <div class="form-group">
-          <label for="nombres">Nombre(s):</label>
-          <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingresa tu nombre(s)">
+          <label for="nombres">CURP:</label>
+          <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingresa tu CURP">
       </div>
-
-      <div class="form-group">
-          <label for="primer_apellido">Primer Apellido:</label>
-          <input class="controls" type="text" name="primer_apellido" id="primer_apellido" placeholder="Ingresa tu primer apellido">
-      </div>
-
-      <div class="form-group">
-          <label for="segundo_apellido">Segundo Apellido:</label>
-          <input class="controls" type="text" name="segundo_apellido" id="segundo_apellido" placeholder="Ingresa tu segundo apellido">
-      </div>
-
       <form id="miFormulario">
-          <input class="botons" type="submit" value="Siguiente">
-      </form>
+        <input class="botons" type="submit" value="Ingresar">
+    </form>
+      <div class="link">¿No conoce su CURP?</div>
+      <a href="pagina1.html">Ingrese aqui</a>
   </section>
 
   <script>
-      document.getElementById("miFormulario").addEventListener("submit", function(event) {
-          event.preventDefault(); 
-          alert("Formulario enviado correctamente.");
-      });
+      
   </script>
 </body>
 </html>
