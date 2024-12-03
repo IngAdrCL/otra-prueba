@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Formulario Transformado</title>
+</head>
+<body>
+  <!-- Franjas fuera del formulario -->
+  <div class="franja"></div>
+  <div class="franja2"></div>
+
+  <section class="form-register">
+      <h4>Genera tu CURP</h4>
+      
+      <div class="form-group">
+          <label for="nombres">Nombre(s):</label>
+          <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingresa tu nombre(s)">
+      </div>
+
+      <div class="form-group">
+          <label for="primer_apellido">Primer Apellido:</label>
+          <input class="controls" type="text" name="primer_apellido" id="primer_apellido" placeholder="Ingresa tu primer apellido">
+      </div>
+
+      <div class="form-group">
+          <label for="segundo_apellido">Segundo Apellido:</label>
+          <input class="controls" type="text" name="segundo_apellido" id="segundo_apellido" placeholder="Ingresa tu segundo apellido">
+      </div>
+
+      <form id="miFormulario">
+          <input class="botons" type="submit" value="Generar CURP">
+      </form>
+  </section>
+
+  <script>
+      document.getElementById("miFormulario").addEventListener("submit", function(event) {
+          event.preventDefault(); 
+          alert("Formulario enviado correctamente.");
+      });
+  </script>
+</body>
+</html>
