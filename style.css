@@ -46,7 +46,7 @@ body {
 
 /* Título del formulario */
 .form-register h4 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
     color: #333333;
     text-align: center;
@@ -68,7 +68,7 @@ label {
 .controls {
     width: 100%;
     padding: 10px;
-    font-size: 20px;
+    font-size: 27px;
     border: 1px solid #dddddd;
     border-radius: 5px;
     box-sizing: border-box;
@@ -84,7 +84,7 @@ label {
 .botons {
     background-color: #032549; /* Azul brillante */
     color: white;
-    font-size: 1em;
+    font-size: 27px;
     padding: 10px;
     border: none;
     border-radius: 5px;
