@@ -6,6 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <title>Formulario Transformado</title>
+  <style>
+      /* Estilos para la animación de carga */
+      #cargando {
+          display: none;
+          text-align: center;
+          font-size: 18px;
+          color: #333;
+          margin-top: 20px;
+      }
+      .loading {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          border: 5px solid #f3f3f3;
+          border-top: 5px solid #3498db;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+      }
+  </style>
 </head>
 <body>
   <!-- Franjas fuera del formulario -->
@@ -51,7 +75,7 @@
         <label for="dia_nacimiento">Año de Nacimiento:</label>
         <select class="controls" name="dia_nacimiento" id="dia_nacimiento">
             <option value="">Seleccionar el año</option>
-            <!-- Días -->
+            <!-- Años -->
             <script>
                 for (let i = 2024; i > 1800; i--) {
                     document.write(`<option value="${i}">${i}</option>`);
@@ -60,16 +84,41 @@
         </select>
     </div>
 
-      <form id="miFormulario" action="pagina3.html">
+      <!-- Botones "Siguiente" y "Regresar" -->
+      <form id="formularioSiguiente" action="pagina3.html">
           <input class="botons" type="submit" value="Siguiente">
       </form>
-      <form id="miFormulario" action="pagina1.html">
-        <input class="botons" type="submit" value="Regresar">
-    </form>
+      <form id="formularioRegresar" action="pagina1.html">
+          <input class="botons" type="submit" value="Regresar">
+      </form>
+
+      <!-- Animación de carga -->
+      <div id="cargando">
+          <div class="loading"></div>
+          <p> Cargando...</p>
+      </div>
   </section>
 
   <script>
-    
+      // Función para mostrar la animación de carga y redirigir
+      function cargarPagina(event, url) {
+          event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+          // Mostrar la animación
+          document.getElementById("cargando").style.display = "block";
+          // Simular un retraso de 2 segundos antes de redirigir
+          setTimeout(function() {
+              window.location.href = url; // Redirigir a la URL proporcionada
+          }, 2000); // 2 segundos
+      }
+
+      // Asociar la función a los botones "Siguiente" y "Regresar"
+      document.getElementById("formularioSiguiente").addEventListener("submit", function(event) {
+          cargarPagina(event, "pagina3.html");
+      });
+
+      document.getElementById("formularioRegresar").addEventListener("submit", function(event) {
+          cargarPagina(event, "pagina1.html");
+      });
   </script>
 </body>
 </html>
