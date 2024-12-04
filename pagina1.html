@@ -30,16 +30,59 @@
           <input class="controls" type="text" name="segundo_apellido" id="segundo_apellido" placeholder="Ingresa tu segundo apellido">
       </div>
 
-      <form id="miFormulario" action="pagina2.html">
+      <form id="carga" action="pagina2.html">
           <input class="botons" type="submit" value="Siguiente">
       </form>
-      <form id="miFormulario" action="index.html">
+      <form id="carga2" action="index.html">
         <input class="botons" type="submit" value="Regresar">
     </form>
+    <div id="cargando">
+        <div class="loading"></div>
+        <p> Cargando...</p>
+    </div>
   </section>
 
   <script>
-      
+    // Mostrar animación de "Cargando..." cuando se presiona el botón
+    document.getElementById("carga").addEventListener("submit", function(event) {
+        // Evitar que el formulario se envíe inmediatamente
+        event.preventDefault();
+
+        // Mostrar la animación
+        document.getElementById("cargando").style.display = "block";
+
+        // Guardar los datos en el localStorage
+        localStorage.setItem("nombres", document.getElementById("nombres").value);
+        localStorage.setItem("primer_apellido", document.getElementById("primer_apellido").value);
+        localStorage.setItem("segundo_apellido", document.getElementById("segundo_apellido").value);
+
+        // Simular un pequeño retraso antes de continuar (como si estuviéramos esperando una carga)
+        setTimeout(function() {
+            // Después de un pequeño retraso, redirigir a la siguiente página
+            window.location.href = "pagina2.html";
+        }, 2000); // 2 segundos de espera (ajusta según lo necesites)
+    });
+  </script>
+  <script>
+    // Mostrar animación de "Cargando..." cuando se presiona el botón
+    document.getElementById("carga2").addEventListener("submit", function(event) {
+        // Evitar que el formulario se envíe inmediatamente
+        event.preventDefault();
+
+        // Mostrar la animación
+        document.getElementById("cargando").style.display = "block";
+
+        // Guardar los datos en el localStorage
+        localStorage.setItem("nombres", document.getElementById("nombres").value);
+        localStorage.setItem("primer_apellido", document.getElementById("primer_apellido").value);
+        localStorage.setItem("segundo_apellido", document.getElementById("segundo_apellido").value);
+
+        // Simular un pequeño retraso antes de continuar (como si estuviéramos esperando una carga)
+        setTimeout(function() {
+            // Después de un pequeño retraso, redirigir a la siguiente página
+            window.location.href = "index.html";
+        }, 2000); // 2 segundos de espera (ajusta según lo necesites)
+    });
   </script>
 </body>
 </html>
